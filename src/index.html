@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.cdnfonts.com/css/futura-pt" rel="stylesheet">
+  <link href="./css/styles.css" rel="stylesheet">
+
+  <title>Uplink ceiling calculator</title>
+</head>
+
+<body>
+  <div class="calculator">
+    <h1>Рассчитайте стоимость Вашего потолка онлайн!</h1>
+
+    <ul class="calculator__tabs-container">
+      <li>Комната №1</li>
+      <li>
+        <svg width="14" height="14" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M13,7H11V11H7V13H11V17H13V13H17V11H13V7Z"
+            fill="black" />
+        </svg>
+
+        Добавить комнату
+      </li>
+    </ul>
+    <div class="calculator__main-container">
+      <div class="calculator__room-form">
+
+        <!-- Площадь помещения и количество углов-->
+        <div class="calculator__controls-group">
+
+          <div style="width: 100%;">
+            <h2>Площадь помещения:</h2>
+            <div class="custom-input">
+              <button class="custom-input__button custom-input__button--decrease">
+                <svg width="16" height="4" viewBox="0 0 16 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M0.5 1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H14.5C15.0523 0.5 15.5 0.947715 15.5 1.5V2.5C15.5 3.05228 15.0523 3.5 14.5 3.5H1.5C0.947715 3.5 0.5 3.05228 0.5 2.5V1.5Z"
+                    fill="black" />
+                </svg>
+              </button>
+              <input type="number" min="10" max="99999" value="10" class="custom-input__input area" id="area" />
+              <button class="custom-input__button custom-input__button--increase">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M16 8C16 8.73733 15.936 9.33333 15.1987 9.33333H9.33333V15.1987C9.33333 15.9347 8.73733 16 8 16C7.26267 16 6.66667 15.9347 6.66667 15.1987V9.33333H0.801333C0.0653331 9.33333 0 8.73733 0 8C0 7.26267 0.0653331 6.66667 0.801333 6.66667H6.66667V0.801333C6.66667 0.0639998 7.26267 0 8 0C8.73733 0 9.33333 0.0639998 9.33333 0.801333V6.66667H15.1987C15.936 6.66667 16 7.26267 16 8Z"
+                    fill="black" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div style="width: 100%;">
+            <h2>Количество углов:</h2>
+            <div class="custom-input">
+              <button class="custom-input__button custom-input__button--decrease">
+                <svg width="16" height="4" viewBox="0 0 16 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M0.5 1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H14.5C15.0523 0.5 15.5 0.947715 15.5 1.5V2.5C15.5 3.05228 15.0523 3.5 14.5 3.5H1.5C0.947715 3.5 0.5 3.05228 0.5 2.5V1.5Z"
+                    fill="black" />
+                </svg>
+              </button>
+              <input type="number" min="1" max="9999999" value="1" class="custom-input__input" id="corners" />
+              <button class="custom-input__button custom-input__button--increase">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M16 8C16 8.73733 15.936 9.33333 15.1987 9.33333H9.33333V15.1987C9.33333 15.9347 8.73733 16 8 16C7.26267 16 6.66667 15.9347 6.66667 15.1987V9.33333H0.801333C0.0653331 9.33333 0 8.73733 0 8C0 7.26267 0.0653331 6.66667 0.801333 6.66667H6.66667V0.801333C6.66667 0.0639998 7.26267 0 8 0C8.73733 0 9.33333 0.0639998 9.33333 0.801333V6.66667H15.1987C15.936 6.66667 16 7.26267 16 8Z"
+                    fill="black" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Фактура и цвет потолка -->
+        <div class="calculator__controls-group">
+
+          <div style="width: 100%;">
+            <h2>Фактура потолка:</h2>
+            <div class="custom-select">
+              <select class="custom-select__box" id="texture">
+                <option value="0">ПВХ</option>
+                <option value="1">Ткань</option>
+              </select>
+              <div class="custom-select__icon">
+                <svg width="13" height="9" viewBox="0 -1 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M6.5 8.04168L0.25 1.79168L1.70833 0.333344L6.5 5.12501L11.2917 0.333344L12.75 1.79168L6.5 8.04168Z"
+                    fill="white" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div style="width: 100%;">
+            <h2>Цвет потолка:</h2>
+            <div class="custom-select">
+              <select class="custom-select__box" id="color">
+                <option value="0">Белый</option>
+                <option value="1">Цветной</option>
+              </select>
+              <div class="custom-select__icon">
+                <svg width="13" height="9" viewBox="0 -1 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M6.5 8.04168L0.25 1.79168L1.70833 0.333344L6.5 5.12501L11.2917 0.333344L12.75 1.79168L6.5 8.04168Z"
+                    fill="white" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="total-price">
+          <p>Итого: <span id="totalPrice">0</span> руб.</p>
+          (Ориентировочная стоимость)
+        </div>
+
+        <div class="calculator__buttons-group">
+          <button class="order-button custom-button">
+            ОФОРМИТЬ ЗАКАЗ
+            <span class="order-button__help">?</span>
+          </button>
+          <button class="custom-button">СКАЧАТЬ СМЕТУ</button>
+        </div>
+      </div>
+      <div class="calculator__room-image"></div>
+    </div>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="/js/main.min.js"></script>
+</body>
+
+</html>

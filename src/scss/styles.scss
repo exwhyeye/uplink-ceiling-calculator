@@ -1,0 +1,30 @@
+@import './components/calculator/_calculator';
+@import './components/custom-button/_custom-button';
+@import './components/custom-select/_custom-select';
+@import './components/custom-input/_custom-input';
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+}
+
+body {
+  background: no-repeat center url("/assets/png/background.png");
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+    background: none;
+  }
+}

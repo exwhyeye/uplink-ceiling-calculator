@@ -1,0 +1,68 @@
+@import '../_variables';
+
+.custom-button {
+  // min-width: 168px;
+  width: 100%;
+  width: 232px;
+  height: 60px;
+
+  border: 1px solid $button-bg-color-accent;
+  border-radius: 5px;
+  background: none;
+  color: $button-bg-color-accent;
+
+  font-size: 18px;
+  font-weight: 500;
+  font-family: "Futura PT", sans-serif;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    border: 1px solid $button-bg-color-accent_hover;
+    color: $button-bg-color-accent_hover;
+  }
+
+  &:active {
+    border: 1px solid $button-bg-color-accent_active;
+    color: $button-bg-color-accent_active;
+  }
+}
+
+.order-button {
+  position: relative;
+  background: $button-bg-color-accent;
+  color: $font-color-alt-accent;
+
+  &:hover {
+    background: $button-bg-color-accent_hover;
+    color: $font-color-alt-accent;
+  }
+
+  &:active {
+    background: $button-bg-color-accent_active;
+    color: $font-color-alt-accent;
+  }
+
+  &__help {
+    width: 25px;
+    height: 25px;
+
+    display: block;
+    position: absolute;
+    top: -1px;
+    right: -1px;
+
+    text-align: center;
+    font-weight: 400px;
+    font-size: 18px;
+    line-height: 27px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+    border-top-right-radius: 5px;
+  }
+}
+
+@import './media';

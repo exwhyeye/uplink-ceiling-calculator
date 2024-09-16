@@ -1,0 +1,127 @@
+@import '../_variables';
+
+.calculator {
+  width: 100%;
+  max-width: 1500px;
+  padding: 0 25px 0 25px;
+
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "Futura PT", sans-serif;
+
+  h1 {
+    font-size: 48px;
+    font-weight: 500;
+    margin: 0 0 40px 0;
+  }
+
+  h2 {
+    font-size: 18px;
+    font-weight: 400;
+    margin: 5px 0 5px 0;
+  }
+
+  ul {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+    overflow-x: auto;
+
+
+    /*
+      overflow-x: auto;
+      нужно, чтобы можно было прокручивать табы
+      при большом их количестве. убрал, потому что
+      не успел решить проблему с тенью, которая обрезается
+    */
+
+    li {
+      cursor: pointer;
+      padding: 20px;
+      background-color: $tabs-bg-color-primary;
+
+      &:hover {
+        box-shadow: 0px -10px 30px 0px #85858540;
+      }
+    }
+
+    li:last-child {
+      background-color: $tabs-bg-color-secondary;
+    }
+  }
+
+  p {
+    margin: 0;
+  }
+
+  &__tabs-container {
+    position: relative;
+
+    width: 100%;
+    height: 60px;
+  }
+
+  &__main-container {
+    width: 100%;
+    height: 480px;
+
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0px 4px 54.95px 0px #85858540;
+  }
+
+  &__room-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 700px;
+    height: 100%;
+    padding: 40px;
+    background-color: $bg-color-primary;
+  }
+
+  &__room-image {
+    width: calc(100% - 700px);
+    height: 100%;
+    background: no-repeat center url("/assets/png/room.png");
+  }
+
+  &__controls-group {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  &__buttons-group {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+  }
+}
+
+.total-price {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  p,
+  span {
+    font-weight: 500;
+    font-size: 36px;
+  }
+
+  p {
+    color: $font-color-secondary;
+  }
+
+  span {
+    color: $font-color-accent;
+  }
+}
+
+@import './_media';
